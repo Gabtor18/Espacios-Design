@@ -1,0 +1,131 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.Allwidget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.widTool {
+    z-index: 40;
+    height: 30px;
+    width: 120px;
+    position: fixed;
+    bottom: -135px;
+    right: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6%;
+    opacity: 0;
+
+    span {
+        background-color: v.$blanco;
+        height: 30px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6%;
+    }
+
+    .widTri {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-left: 20px solid v.$blanco;
+        border-bottom: 10px solid transparent;
+        margin: 0 0 0 0px;
+        background-color: transparent;
+    }
+}
+
+.Allwidget:hover {
+    .widTool {
+        animation: widOpa 1s forwards;
+        bottom: 35px;
+        right: 85px;
+
+        @include m.tablet {
+            animation: none;
+        }
+
+        @include m.phone {
+            animation: none;
+        }
+    }
+}
+
+@keyframes widOpa {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.widget {
+    margin-left: 86px;
+
+    @include m.phone {
+        margin-left: 79px;
+    }
+
+    z-index: 40;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include m.phone {
+        height: 30px;
+        width: 30px;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .widIcon, img {
+        height: 35px;
+        width: 35px;
+    }
+
+    @include m.phone {
+        .widIcon, img {
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+
+.widget:hover {
+    animation: widSize 0.5s forwards;
+
+    @include m.tablet {
+        animation: none;
+    }
+
+    @include m.phone {
+        animation: none;
+    }
+}
+
+@keyframes widSize {
+    from {
+        height: 50px;
+        width: 50px;
+    }
+
+    to {
+        height: 60px;
+        width: 60px;
+    }
+}

@@ -1,0 +1,160 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.products {
+    margin-left: 86px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: auto;
+
+    @include m.phone {
+        margin-left: 79px;
+        min-width: 241px;
+        width: auto;
+    }
+
+    h2 {
+        text-align: center;
+        font-weight: 900;
+        font-size: 2.4rem;
+        margin: 35px 0 0 0;
+
+        @include m.tablet {
+            margin: 20px 0 0 0;
+        }
+        
+        @include m.phone {
+            font-size: 1.8rem;
+        }
+    }
+
+    p {
+        font-weight: 400;
+        text-align: center;
+        font-size: 1.5rem;
+        color: v.$negro;
+        // text-shadow: 1px 0.5px black;
+
+        @include m.phone {
+            font-size: 1.1rem;
+        }
+    }
+
+    .elem1, .elem2, .elem3, .elem4 {
+        display: flex;
+        justify-content: space-around;
+        // align-items: center;
+        margin: 10px;
+        height: 400px;
+
+        @include m.tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            width: auto;
+        }
+
+        @include m.phone {
+            min-width: 241px;
+            margin: 0;
+        }
+
+        .pro-card {
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
+            width: 363px;
+            max-height: 400px;
+            margin: 0 2px;
+
+            @include m.tablet {
+                margin: 10px 0;
+            }
+
+            @include m.phone {
+                min-width: 241px;
+                width: auto;
+            }
+        }
+
+        .pro-card h2 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 1.4rem;
+            height: auto;
+            color: v.$negro;
+            // text-shadow: 0.5px 0.5px black;
+
+            @include m.tablet {
+                height: auto;
+                margin: 5px 0;
+            }
+
+            @include m.phone {
+                font-size: 1.2rem;
+                height: auto;
+                margin: 5px 0;
+            }
+        }
+
+        .pro-card p {
+            font-weight: 400;
+            font-size: 0.9rem;
+            max-height: 172px;
+            text-align: center;
+            margin: 0 2px;
+            line-height: 1.2;
+            color: black;
+            text-shadow: none;
+        }
+
+        .pro-card h2 span {
+            font-weight: 300;
+        }
+    }
+}
+
+.pro-card .container {
+    height: 228px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .image-wrapper picture {
+        height: 228px;
+        width: 100%;
+        padding-bottom: 5px;
+    }
+
+    .image-wrapper {
+        width:300%;
+        height: 100%;
+        display: flex;
+        /* flex-wrap: nowrap; */
+        position: relative;
+        animation: slides 15s infinite;
+    }
+    
+      .image-wrapper img {
+        height: 100%;
+        width: 100%;
+        // object-fit: cover;
+    }
+
+      @keyframes slides {
+        0% {left: 0;}
+        15% {left: 0;}
+        20% {left: -100%;}
+        35% {left: -100%;}
+        40% {left: -200%;}
+        55% {left: -200%;}
+        60% {left: -100%;}
+        75% {left: -100%;}
+        80% {left: 0;}
+    }
+}

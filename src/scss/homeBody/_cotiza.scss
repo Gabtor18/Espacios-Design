@@ -1,0 +1,266 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.cotiza {
+    padding: 20px 0 20px 86px;
+    background-color: #dfdfdf;
+    background-color: v.$darkmostaza;
+
+    @include m.phone {
+        padding: 15px 0 15px 79px;
+    }
+
+    .bg-cotiza {
+        // display: flex;
+        // justify-content: center;
+        margin: 0 auto;
+        width: 62%;
+        // background-color: v.$blanco;
+        border-radius: 10px;
+        // background-image: url(../img/1_display.jpg);
+        // background-size: cover;
+        // background-repeat: no-repeat;
+        // background-position: center center;
+
+        @include m.PC {
+            width: 700px;
+        }
+
+        @include m.tablet {
+            width: 95%;
+        }
+    }
+    
+    form {
+        margin: 10px 5px 10px 10px;
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: 2rem;
+        padding-top: 10px;
+        margin-bottom: 0;
+    }
+
+    .form1 {
+        @include m.tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .form1 input {
+        width: 475px;
+        height: 25px;
+        border: 0;
+        margin: 10px 0;
+        padding: 20px;
+        outline: none;
+        font-size: 16px;
+
+        @include m.tablet {
+            width: auto;
+        }
+
+        @include m.phone {
+            width: 213px;
+        }
+    }
+
+    #phone, #cellphone {
+        width: 200px;
+
+        @include m.tablet {
+            width: auto;
+        }
+
+        @include m.phone {
+            width: 213px;
+        }
+    }
+
+    .h2-2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        padding-bottom: 5px;
+        text-align: center;
+
+        @include m.phone {
+            font-size: 1.3rem;
+        }
+    }
+
+    .form2 {
+        padding: 0 5px 10px 0;
+
+        @include m.grid(3, 15px);
+
+        @include m.tablet {
+            @include m.grid(2,10px);
+        }
+
+        @include m.phone {
+            @include m.grid(1, 20px)
+        }
+    }
+
+    .form2 h3 {
+        font-weight: 600;
+        text-align: center;
+        background-color: v.$mostaza;
+        font-size: 1.2rem;
+    }
+
+    .form2 .form-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    // .form2 .form-content1 {
+    //     display: flex;
+    //     justify-content: space-between;
+    // }
+
+    .form2 .form-content1 .h4 {
+        margin: 30px 0 0 0;
+        width: 100%;
+    }
+
+    .form2 .form-content2 .h4 {
+        margin: 15px 0 0 0;
+        width: 100%;
+    }
+
+    .form2 .form-content h4 {
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .form2 .form-content1 h4 {
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .form2 .form-content p {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form2 .form-content1 h4 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form2 .form-content .bold {
+        font-weight: 600;
+    }
+
+    .form2 .form-content p input {
+        margin: 0 0 0 3px;
+    }
+
+    .form3 {
+        @include m.tablet {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .form3 input {
+        width: 335px;
+        height: 25px;
+        border: 0;
+        margin: 10px 0;
+        padding: 20px;
+        outline: none;
+        font-size: 16px;
+
+        @include m.phone {
+            width: 213px;
+        }
+    }
+
+    .form3 .radio {
+        display: flex;
+        justify-content: space-between;
+        width: 680px;
+
+        @include m.tablet {
+            flex-direction: column;
+            width: auto;
+            align-items: center;
+        }
+    }
+
+    .form3 .radio1, .radio2, .radio3 {
+        width: auto;
+        display: flex;
+        align-items: center;;
+        padding: 0 0 0 2px;
+
+        @include m.tablet {
+            width: 310px;
+            margin: 0 0 5px 0;
+        }
+
+        @include m.phone {
+            width: auto;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        p {
+            margin: 0 5px 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include m.phone {
+                flex-direction: column;
+            }
+        }
+    }
+
+    .radio1 #cenefa-si, .radio1 #cenefa-no, .radio2 #manual, .radio2 #motorizada, .radio3 #derecha, .radio3 #izquierda {
+        width: 20px;
+        height: 20px;
+        margin: 2px 0px 2px 5px;
+    }
+
+    .radio1, .radio2, .radio3 {
+        border: 1px solid;
+        border-radius: 5px;
+    }
+
+    .radio2 {
+        @include m.phone {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .form-btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-btn button {
+        margin: 10px 0 10px 0;
+        padding: 10px;
+        background-color: v.$mostaza;
+        color: v.$negro;
+        font-size: 18px;
+        border: 0;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+    }
+
+}

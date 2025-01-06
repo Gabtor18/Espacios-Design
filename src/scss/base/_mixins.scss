@@ -1,0 +1,55 @@
+@use "variables"as v;
+
+@mixin phone {
+    @media (max-width: v.$phone) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin protablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin PC {
+    @media (max-width: v.$PC) {
+        @content;
+    }
+}
+
+@mixin TV {
+    @media (max-width: v.$TV) {
+        @content;
+    }
+}
+
+@mixin MAC {
+    @media (max-width: v.$MAC) {
+        @content;
+    }
+}
+
+@mixin FOURK {
+    @media (max-width: v.$FOURK) {
+        @content;
+    }
+}
+
+@mixin grid($columns, $gap) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    gap: $gap;
+}
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

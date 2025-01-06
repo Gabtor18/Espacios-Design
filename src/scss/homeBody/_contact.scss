@@ -1,0 +1,178 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contacto {
+    margin-left: 86px;
+
+    @include m.phone {
+        margin-left: 79px;
+    }
+
+    h2 {
+        font-weight: 900;
+        font-size: 2rem;
+        text-align: center;
+        margin: 20px 0 0 0;
+
+        @include m.tablet {
+            margin: 10px 0;
+        }
+
+        @include m.phone {
+            text-align: start;
+            margin-left: 5px;
+        }
+    }
+
+    p, a {
+        font-weight: 400;
+        font-size: 1.1rem;
+        margin: 5px 100px;
+
+        @include m.tablet {
+            margin: 0 5px;
+        }
+    }
+}
+
+.contacto-info {
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-between;
+
+    @include m.tablet {
+        display: block;
+        margin: 20px 0;
+    }
+}
+
+.contacto-details {
+    margin: 10px 10px;
+    width: 35%;
+
+    @include m.tablet {
+        width: 100%;
+    }
+
+    h3 {
+    border-bottom: 1px solid;
+    font-weight: 700;
+    margin: 10px 0;
+    width: 95%;
+    }
+
+    h3:last-of-type {
+    margin: 20px 0 0 0;
+    }
+
+    h4 {
+        font-weight: 500;
+    }
+
+    p, a {
+        margin: 5px 0;
+        font-size: 1rem;
+    }
+
+    .contact-text1 {
+        a:hover, p:hover {
+            animation: concolor 0.3s forwards;
+        }
+    }
+
+    .pre-link {
+        background-color: v.$mostaza;
+        border: solid 2px v.$negro;
+        border: none;
+        color: v.$negro;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration-color: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .pre-link a:visited {
+        color: v.$negro;
+    }
+
+    .pre-link:hover {
+        text-decoration-line: underline;
+        background-color: v.$negro;
+        animation: concolor 0.3s forwards;
+
+        a:visited {
+            color: v.$mostaza;
+            // animation: concolor 0.3s forwards;
+        }
+    }
+
+}
+
+.contact-display {
+
+    h2 {
+        font-weight: 900;
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    p {
+        color: v.$negro;
+        margin: 5px 0;
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+
+    .contact-email {
+
+        a {
+        color: v.$negro;
+        margin: 5px 0;
+        font-weight: 400;
+        font-size: 0.9rem;
+        line-height: 1.5;  
+        }
+
+        a:hover, p:hover {
+            animation: concolor 0.3s forwards;
+        }
+
+    }
+
+    span {
+        color: v.$mostaza;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+}
+
+@keyframes concolor {
+    from {
+        color: v.$negro;
+    }
+
+    to {
+        color: v.$mostaza;
+    }
+}
+
+.contact-img {
+    max-width: 60%;
+    margin: 20px 10px 10px 0px;
+
+    @include m.tablet {
+        max-width: 100%;
+    }
+
+    img {
+        max-width: 650px;
+        max-height: 440px;
+
+        @include m.tablet {
+            margin: auto 5px;
+            max-width: 99%;
+            max-height: 440px
+        }
+    }
+}

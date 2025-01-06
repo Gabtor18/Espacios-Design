@@ -1,0 +1,237 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem 0;
+    background-color: #454545;
+    margin-left: 87px;
+    width: auto;
+    // width: 100%;
+
+    @include m.tablet {
+        @include m.grid(2, 1.8rem);
+    }
+
+    @include m.phone {
+        margin-left: 79px;
+        @include m.grid(1, 1.2rem);
+        // width: 100%;
+        min-width: 241px;
+    }
+}
+
+.footer-icon {
+    color: v.$blanco;
+    margin-left: 8px;
+
+    h2 {
+        font-weight: 900;
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    p {
+        color: v.$blanco;
+    }
+
+    span {
+        color: v.$mostaza;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    @include m.phone {
+        text-align: center;
+        margin-left: 0px;
+        min-width: 241px;
+    }
+}
+
+.footer-explore {
+
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin-bottom: 5px;
+        color: v.$blanco;
+        font-weight: 600;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    a {
+        color: v.$blanco;
+        font-weight: 400;
+        font-size: 0.8rem;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    a:hover {
+        color: v.$mostaza;
+    }
+
+    @include m.phone {
+        min-width: 241px;
+    }
+}
+
+.footer-contact {
+
+
+    h2 {
+        color: v.$blanco;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .contact-place,
+    .contact-phone,
+    .contact-text1,
+    .contact-text2,
+    .contact-email {
+        display: flex;
+        align-items: center;
+        margin: 5px 0;
+
+        svg {
+            margin: 6px 0 0px 0;
+            max-width: 16px;
+            height: 16px;
+        }
+
+        p {
+            color: v.$blanco;
+        }
+
+        a {
+            color: v.$blanco;
+            font-size: 14px;
+        }
+
+        @include m.phone {
+            flex-direction: column;
+            min-width: 241px;
+
+            p {
+                font-size: 10px;
+            }
+
+            a {
+                font-size: 10px;
+            }
+        }
+    }
+
+    .contact-text1 {
+        a:hover, p:hover {
+            animation: fotcolor 0.3s forwards;
+        }
+    }
+
+    .contact-email {
+        a:hover, p:hover {
+            animation: fotcolor 0.3s forwards;
+        }
+    }
+
+    @include m.phone {
+        min-width: 241px;
+    }
+}
+
+@keyframes fotcolor {
+    from {
+        color: v.$blanco;
+    }
+
+    to {
+        color: v.$mostaza;
+    }
+}
+
+.footer-social {
+    text-align: center;
+    margin-right: 8px;
+
+    h2 {
+        color: v.$blanco;
+        font-size: 1rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    
+    .fa {
+        padding: 5px;
+        font-size: 30px;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 50%;
+      }
+
+      .fa:hover {
+        opacity: 0.7;
+      }
+
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+
+      .fa-instagram {
+        padding: 4px;
+        background: #ce629a;
+        color: white;
+      }
+
+      .fa-youtube {
+          padding: 4px;
+          background: red;
+          color: white;
+      }
+
+      @include m.phone {
+        min-width: 241px;
+    }
+}
+
+.footer-copy {
+    background-color: v.$negro;
+    margin-left: 87px;
+    display: flex;
+    border: none;
+
+    @include m.phone {
+        margin-left: 79px;
+    }
+
+    p {
+        color: v.$blanco;
+        margin-left: 8px;
+        padding: 5px 0;
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+
+    span {
+        font-weight: 700;
+    }
+    
+    div {
+        width: 10px;
+
+        svg {
+            position: relative;
+            right: 20px;
+            top: 7px;
+        }
+    }
+}
